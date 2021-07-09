@@ -1,0 +1,8 @@
+../info/1239/8591.htm
+{"number": 1, "title": "\n关于召开2022届毕业生实习管理规定说明会的通知\n2021-07-08  点击：[] ", "url": "https://drise.dlut.edu.cn/../info/1239/8591.htm"}
+{"number": 2, "title": "\n关于“2020年度校微电影大赛”获奖结果的通知\n2021-07-06  点击：[] ", "url": "https://drise.dlut.edu.cn/../info/1194/8581.htm"}
+{"number": 3, "title": "\n【科创竞赛】第28届大连理工大学数学建模竞赛暨2021年东北三省数学建模联赛通知\n2021-07-06  点击：[] ", "url": "https://drise.dlut.edu.cn/../info/1194/8572.htm"}
+{"number": 4, "title": "\n2019级形势与政策上课通知20210705\n2021-07-05  点击：[] ", "url": "https://drise.dlut.edu.cn/../info/1239/8571.htm"}
+{"number": 5, "title": "\n国际信息与软件学院关于2019级本科生专业分流工作的通知\n2021-07-05  点击：[] ", "url": "https://drise.dlut.edu.cn/../info/1239/8561.htm"}
+{"number": 6, "title": "\n关于VPN/WebVPN及部分信息系统限制访问的通知\n2021-06-30  点击：[] ", "url": "https://drise.dlut.edu.cn/../info/1194/8544.htm"}
+{"number": 7, "title": "\n关于大连理工大学开发区校区第六届日语配音比赛获奖结果的通知\n2021-06-29  点击：[] ", "url": "https://drise.dlut.edu.cn/../info/1194/8543.htm"}
