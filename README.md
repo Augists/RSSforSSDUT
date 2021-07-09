@@ -1,6 +1,6 @@
-# SSDUT-undergraduate
+# RSS for DUT-EDA
 
-Provide RSS link for the undergraduate notice
+Provide RSS link for the undergraduate notice in DUT EDA(大连理工大学开发区校区)
 
 ## Preparation
 
@@ -16,7 +16,7 @@ Provide RSS link for the undergraduate notice
 
 ### bs4
 
-Python use `requests` and `bs4` to get the content of undergraduate notice on [https://ssdut.dlut.edu.cn](https://ssdut.dlut.edu.cn). You may also have to install `requests` if needed
+Python use `requests` and `bs4` to get the content of undergraduate notice on [https://ssdut.dlut.edu.cn](https://ssdut.dlut.edu.cn) and [https://ise.dlut.edu.cn](https://ise.dlut.edu.cn). You may also have to install `requests` if needed
 
 `pip3 install bs4`
 
@@ -38,7 +38,10 @@ python setup.py install
 
 Frankly speaking, you can choose your favorite Http Server, and as for me, I choose apache2 to provide http web page
 
-Default `atom.xml` path: `/var/www/html/atom.xml`
+Default `atom.xml` path:
+
+* Software: `/var/www/html/atom.xml`
+* ISE: `/var/www/html/ise/atom.xml`
 
 ```bash
 apt install apache2
@@ -50,10 +53,32 @@ Start your apache2 server and test
 
 ## Usage
 
-1. `git clone https://github.com/Augists/SSDUT-undergraduate.git`
-2. `cd SSDUT-undergraduate`
-3. create your `info.txt` file and just write into the first line with freedom
-4. `python3 ssdut.py`
+1. `git clone https://github.com/Augists/RSSforSSDUT.git`
+2. `cd RSSforSSDUT`
+3. create your `info.txt` file and just write into the first line with freedom (if needed)
+4. choose your directory
+	* Software
+	* ISE
+5. `chmod +x runssdut.sh`
+6. `nohup ./runssdut.sh > log.out 2>&1 &`
+
+then the shell script will run in slience, with check for updating in every 50 or 60 seconds
+
+You can `ps -ef` to list the jobs behind and find that
+
+```bash
+./runssdut.sh
+python3 ssdut.py
+```
+
+or
+
+```bash
+./runssdut.sh
+sleep 50s
+```
+
+Just `kill -9 job_id` to stop your RSS job
 
 ## MIT License
 
