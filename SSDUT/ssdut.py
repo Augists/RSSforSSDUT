@@ -162,7 +162,7 @@ class ssdut():
         detailed_doc = str(detailed_content,'utf-8')
         detailed_soup = BeautifulSoup(detailed_doc, 'html.parser')
         detailed_title = detailed_soup.find(class_='mt_10 mb_10 f15').get_text()
-        detailed_item['number'] = i     # DEBUG
+        # detailed_item['number'] = i     # DEBUG
         detailed_item['title'] = detailed_title
         detailed_item['url'] = url
 
@@ -198,22 +198,24 @@ class ssdut():
                 item = Item(
                         title = i['title'],
                         link = i['url'],
-                        description = str(i['number']) + ": " +
-                        i['title'] + " OPEN " + i['url'],
+                        # description = str(i['number']) + ": " +
+                        description = i['title'] + "\n" + i['url'],
                         author = 'Augists',
                         guid = Guid(i['url']),
-                        pubDate=datetime.datetime(2021, 8, 1, 4, 0))     # DEBUG: need update time
+                        # DEBUG: need update time
+                        pubDate=datetime.datetime(2021, 8, 1, 4, 0))
                 itemsList.append(item)
         feed = Feed(
                 title = "Undergraduate Notification",
-                link = "https://ssdut.dlut.edu.cn",
+                link = "http://137.116.167.187/ssdut/atom.xml",
+                # link = "https://ssdut.dlut.edu.cn",
                 description = "RSS atom.xml of https://ssdut.dlut.edu.cn",
                 language = "en-US",
                 lastBuildDate = datetime.datetime.now(),
                 items = itemsList
                 )
         atom = feed.rss()
-        with open('/var/www/html/atom.xml', 'w') as f:
+        with open('/var/www/html/ssdut/atom.xml', 'w') as f:
             f.write(atom)
 
 '''

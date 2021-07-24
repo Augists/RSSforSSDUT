@@ -161,7 +161,7 @@ class ise():
         detailed_doc = str(detailed_content,'utf-8')
         detailed_soup = BeautifulSoup(detailed_doc, 'html.parser')
         detailed_title = detailed_soup.find(class_='header').get_text()
-        detailed_item['number'] = i     # DEBUG
+        # detailed_item['number'] = i     # DEBUG
         detailed_item['title'] = detailed_title
         detailed_item['url'] = url
 
@@ -197,15 +197,16 @@ class ise():
                 item = Item(
                         title = i['title'],
                         link = i['url'],
-                        description = str(i['number']) + ": " +
-                        i['title'] + " OPEN " + i['url'],
+                        # description = str(i['number']) + ": " +
+                        description = i['title'] + "\n" + i['url'],
                         author = 'Augists',
                         guid = Guid(i['url']),
-                        pubDate=datetime.datetime(2021, 8, 1, 4, 0))     # DEBUG: need update time
+                        # DEBUG: need update time
+                        pubDate=datetime.datetime(2021, 8, 1, 4, 0))
                 itemsList.append(item)
         feed = Feed(
                 title = "ISE Undergraduate Notification",
-                link = "https://drise.dlut.edu.cn/",
+                link = "http://137.116.167.187/ise/atom.xml",
                 description = "RSS atom.xml of https://drise.dlut.edu.cn/",
                 language = "en-US",
                 lastBuildDate = datetime.datetime.now(),
