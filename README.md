@@ -1,6 +1,6 @@
 # RSS for DUT-EDA
 
-Provide RSS link for the undergraduate notice in DUT EDA(大连理工大学开发区校区)
+Provide RSS link for the undergraduate notice in DUT-EDA(大连理工大学开发区校区)
 
 ## Preparation
 
@@ -10,15 +10,21 @@ Provide RSS link for the undergraduate notice in DUT EDA(大连理工大学开�
 
 `brew install python3`
 
+or use the command on [homebrew](https://docs.brew.sh/Homebrew-and-Python)
+
+`$(brew --prefix)/opt/python/libexec/bin`
+
 * ubuntu
 
-`sudo apt install python3`
+`sudo apt install python3 python3-pip`
 
 ### bs4
 
 Python use `requests` and `bs4` to get the content of undergraduate notice on [https://ssdut.dlut.edu.cn](https://ssdut.dlut.edu.cn) and [https://ise.dlut.edu.cn](https://ise.dlut.edu.cn). You may also have to install `requests` if needed
 
-`pip3 install bs4`
+```bash
+sudo pip3 install bs4
+```
 
 ### rfeed
 
@@ -34,6 +40,12 @@ cd rfeed
 python setup.py install
 ```
 
+or use pip3
+
+```bash
+sudo pip3 install rfeed
+```
+
 ### apache2
 
 Frankly speaking, you can choose your favorite Http Server, and as for me, I choose apache2 to provide http web page
@@ -44,7 +56,7 @@ Default `atom.xml` path:
 * ISE: `/var/www/html/ise/atom.xml`
 
 ```bash
-apt install apache2
+sudo apt install apache2
 cd /etc/apache2
 vi apache2.conf
 ```
@@ -59,8 +71,33 @@ Start your apache2 server and test
 4. choose your directory
 	* Software
 	* ISE
-5. `chmod +x runssdut.sh`
-6. `nohup ./runssdut.sh > log.out 2>&1 &`
+5. use `crontab` to set timely job
+
+### crontab
+
+Make sure that `crontab` in on your server and type
+
+```bash
+sudo crontab -e
+```
+
+and it may use vim to edit the `crontab` file. !Remember! replace `/home/Augists` with your home directory
+
+```crontab
+
+0-59/5 * * * * python3 /home/Augists/RSSforSSDUT/SSDUT/ssdut.py >> /home/Augists/RSSforSSDUT/SSDUT/out.log 2>&1 &
+0-59/5 * * * * python3 /home/Augists/RSSforSSDUT/ISE/ise.py >> /home/Augists/RSSforSSDUT/ISE/out.log 2>&1 &
+
+```
+
+---
+
+### *archived method*
+
+```bash
+1. `chmod +x runssdut.sh`
+2. `sudo nohup ./runssdut.sh > log.out 2>&1 &`
+```
 
 then the shell script will run in slience, with check for updating in every 50 or 60 seconds
 
@@ -79,6 +116,8 @@ sleep 50s
 ```
 
 Just `kill -9 job_id` to stop your RSS job
+
+---
 
 ## MIT License
 

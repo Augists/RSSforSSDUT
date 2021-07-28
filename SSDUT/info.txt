@@ -1,8 +1,8 @@
-info/1120/20924.htm
+info/1116/20953.htm
+{"title": "关于软件学院第二十届团委、学生会及学生组织联合会、开发区校区社团联合会、大学生艺术团工作人员换届面试（第二阶段）的通知", "url": "http://ssdut.dlut.edu.cn/info/1116/20953.htm"}
+{"title": "软件学院2021-2022学年团委、学生会、学生组织联合会工作人员（第一批次）任用公示", "url": "http://ssdut.dlut.edu.cn/info/1116/20944.htm"}
 {"title": "关于开展软件学院2021届本科毕业资格第二批（七月）审核的通知", "url": "http://ssdut.dlut.edu.cn/info/1120/20924.htm"}
 {"title": "关于补充招募软件学院2021-2022学年（第二十届）团委、学生会及学生组织联合会工作人员的通知", "url": "http://ssdut.dlut.edu.cn/info/1116/20923.htm"}
 {"title": "关于评选大连理工大学软件学院2020-2021学年优秀青年志愿者的通知", "url": "http://ssdut.dlut.edu.cn/info/1116/20919.htm"}
 {"title": "关于软件学院2020-2021学年卫生成绩公示的通知", "url": "http://ssdut.dlut.edu.cn/info/1116/20918.htm"}
 {"title": "关于2021级新生班导生面试结果的通知", "url": "http://ssdut.dlut.edu.cn/info/1116/20914.htm"}
-{"title": "关于学生证修改乘车区间手续办理及其他优惠事项办理提醒的通知", "url": "http://ssdut.dlut.edu.cn/info/1120/20913.htm"}
-{"title": "软件学院开展2020-2021学年奖学金评定的通知", "url": "http://ssdut.dlut.edu.cn/info/1116/20883.htm"}

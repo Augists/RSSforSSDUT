@@ -7,6 +7,7 @@ from rfeed import *
 import ast
 
 detailed_list = []
+path = "/home/Augists/RSSforSSDUT/SSDUT/"
 # update_list = []
 
 class ssdut():
@@ -54,7 +55,7 @@ class ssdut():
                     break
                 self.get_details(index+1, detailed_url)
         else:
-            print("No Update This Time\n")
+            print("No Update This Time")
 
     def update_or_not(self, under_list):
         '''
@@ -66,7 +67,9 @@ class ssdut():
         '''
 
         '''link'''
-        f = open("info.txt", "r")
+        global path
+        local_path = path + "info.txt"
+        f = open(local_path, "r")
         lines = f.readlines()
 
         # read first link for check
@@ -113,7 +116,9 @@ class ssdut():
         update:
             save the current first item link in the info file
         '''
-        f = open("info.txt", "w")
+        global path
+        local_path = path + "info.txt"
+        f = open(local_path, "w")
         f.write(link+"\n")
         global detailed_list
         for i in detailed_list:
@@ -180,7 +185,9 @@ class ssdut():
             write to the rss file in json
         '''
         print("Writing as json to info.txt")
-        with open('info.txt', 'a') as f:
+        global path
+        local_path = path + "info.txt"
+        with open(local_path, 'a') as f:
             # json.dump(rss_list, f, indent=4, ensure_ascii=False)
             json.dump(detailed_item, f, ensure_ascii=False)
             f.write("\n")
@@ -190,9 +197,11 @@ class ssdut():
         RSS:
             push rss
         '''
-        print("RSS Generating")
+        print("RSS Generating\n")
         itemsList = []
-        with open('info.txt', 'r') as f:
+        global path
+        local_path = path + "info.txt"
+        with open(local_path, 'r') as f:
             for iread in f.readlines()[1:]:
                 i = ast.literal_eval(iread)
                 item = Item(
