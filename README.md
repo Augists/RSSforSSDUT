@@ -81,7 +81,7 @@ Make sure that `crontab` in on your server and type
 sudo crontab -e
 ```
 
-and it may use vim to edit the `crontab` file. !Remember! replace `/home/Augists` with your home directory
+and it may use vim to edit the `crontab` file
 
 ```crontab
 
@@ -89,6 +89,11 @@ and it may use vim to edit the `crontab` file. !Remember! replace `/home/Augists
 0-59/5 * * * * python3 /home/Augists/RSSforSSDUT/ISE/ise.py >> /home/Augists/RSSforSSDUT/ISE/out.log 2>&1 &
 
 ```
+
+> **!!!Remember!!!**
+> **REPLACE** `/home/Augists` with your home directory in
+> * python file
+> * crontab file
 
 ---
 
